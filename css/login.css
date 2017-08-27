@@ -1,0 +1,131 @@
+/** Stylesheet **/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/bg1.jpg');
+    background-color: #C3663A;
+}
+
+.page-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+.login-content{
+    min-width: 600px;
+    width: 700px;
+    height: 500px;
+    margin: 60px auto;
+    /* background: #C3663A; */
+    opacity: .65;
+    /* border-radius: 15px;     */
+}
+
+.login-content-box{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+/** 
+    login controls settings 
+**/
+
+.login-controls{
+    text-align: center;
+    width: 100%;
+    min-width: 80%;    
+}
+
+.login-header{
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    background: rgb(176, 18, 176);;
+    margin-top: -20px;
+    color: #fff;
+}
+
+.login-header > h1{
+    padding-top: 20px;
+    font-size: 45px;
+}
+
+.login-header > .subtitle{
+    font-size: 14px;
+    padding-top: -20px;
+}
+
+.login-body{
+    height: 320px;
+    background: rgb(128, 0, 128);
+}
+
+form{
+    padding-top: 20px; 
+}
+.frmControl{
+    width: 100%;
+    
+}
+.frmControl > input{
+    width: 70%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: none;
+    margin: 5px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.frmControl > button{
+    width: 60%;
+    min-width: 60%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #0A0AF4;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+
+    border-radius: 25px;
+}
+
+.forgetPswrd{
+    clear: both;
+    margin-top: 25px;
+    width: 100%;
+    height: 30px;
+
+}
+
+.forgetPswrd a{
+    color: #fff;
+    font-size: 14px;
+}
+
+.login-footer{
+    color: #fff;
+}
+
+/*
+    Right side of login content
+*/
+
+.poster{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    
+}

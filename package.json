@@ -1,0 +1,15 @@
+{
+  "name": "corona.io",
+  "version": "1.0.0",
+  "description": "Simple php login structure for understanding session and database in php",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https:/github.com/kaytalium/corona.io.git"
+  },
+  "author": "Ovel Heslop <kayheslop@gmail.com>",
+  "license": "ISC"
+}
