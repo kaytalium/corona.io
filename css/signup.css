@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background: #f0f8ff;
+    margin:0; 
+    }
+
+    h3{
+        font-size: 190%;
+        font-weight: 700;
+        padding-top: 5%;
+        padding-bottom: 15px;
+    }
+    p{
+        font-size: 125%;
+    }
+
+    #head{
+        text-align: center;
+    }
+
+    #signup-info{
+        text-align: center;
+    
+
+    }
+    #fname{
+        padding-top: 2.5%;
+        padding-bottom: 2%;
+    }
+
+    #lname{
+        padding-bottom: 2%;
+    }
+    #gen{
+        padding-bottom: 2%;
+       
+    }
+    #emailadd{
+        padding-bottom: 2%;
+
+    }
+    #btn{
+
+    }
+
+    #pword{
+        padding-bottom: 2%;
+    }
+
+    #altemail{
+        padding-bottom: 2%;
+    }
+
+    input{
+            width:20%;
+            padding: 10px 10px;
+            margin: 5px 0; 
+            box-sizing: border-box; 
+       }
+    select{
+        width: 20%;
+        padding: 10px 10px; 
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
