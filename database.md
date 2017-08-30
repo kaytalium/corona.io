@@ -9,7 +9,7 @@ Create table PersonInfo
 (
     last_name varchar(50),
     first_name varchar(50),
-    gender char(1)
+    gender varchar(6)
     email varchar(50),
     password varchar(50),
     alternate_email varchar(50),
