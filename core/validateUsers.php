@@ -41,8 +41,15 @@
      case 'login':
      $login->userName=$userName;
      $login->password=$password;
+     //Set the login time of user 
     
      $login_result = $login->loginUser();
+     //if($login_result->error)
+     print_r($login_result);
+
+     //echo '<br/>Username: '.$userName.'<br>';
+     //echo 'Password: '.$password.'<br>';
+     //echo 'Request Page: '.$request_page;   
      
      break;
 
@@ -51,7 +58,5 @@
  }
  
 
-echo '<br/>Username: '.$userName.'<br>';
-echo 'Password: '.$password.'<br>';
-echo 'Request Page: '.$request_page;   
+
 
