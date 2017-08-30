@@ -44,10 +44,21 @@
      //Set the login time of user 
     
      $login_result = $login->loginUser();
-     //if($login_result->error)
-     print_r($login_result);
-
-     //echo '<br/>Username: '.$userName.'<br>';
+     if($login_result['error']){
+        print_r($login_result['msg']);
+        //set the error session var and redirect to login screen for display
+        $_SESSION['errors'] = $login_result['msg'];
+        header('Location:../login.php');
+     }else{
+        //set the session vars for personal info and redirect to index.php
+        $_SESSION['firstname'] = $login_result['msg']['firstname'];
+        $_SESSION['lastname']  = $login_result['msg']['lastname'];
+        $_SESSION['avatar']    = $login_result['msg']['avatar'];
+        $_SESSION['personID']  = $login_result['msg']['pindex'];
+        header('Location:../index.php');
+     }
+     
+    //echo '<br/>Username: '.$userName.'<br>';
      //echo 'Password: '.$password.'<br>';
      //echo 'Request Page: '.$request_page;   
      
