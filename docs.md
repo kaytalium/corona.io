@@ -9,15 +9,18 @@ The site will be broken up into two sections.
 ```
 > Internal Codes 
    - Login class >>> oh
-   - Signup class >>> tm
    - AutoClassLoader class >>> oh
-   - Session script >>> tm
-   - error script >>> tm
    - log script >>> oh
 
+   - Signup class >>> tm   
+   - Session script >>> tm
+   - error script >>> tm
+  
+
 > User Interface
-   - index.php >>> tm
    - login.php >>> oh
+
+   - index.php >>> tm   
    - signup.php >>> tm
    
 ```
