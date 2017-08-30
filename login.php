@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start(); ?>
 <head>
   <meta charset="UTF-8">
 
@@ -46,12 +46,19 @@
                             <div class="forgetPswrd">
                              <a href="#">Forget Password</a>
                             </div>
+
+                            <div class="forgetPswrd">
+                            <a href="#">
+                            <?php echo $_SESSION['errors']; ?>
+                            </a>
+                            </div>
                         </form>
                         
                     </div>
 
                     <div class="login-footer">
                         Design & Developed by Humans
+                        
                     </div>
                 </div>
             </div>
