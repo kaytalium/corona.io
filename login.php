@@ -30,13 +30,13 @@
                     </div>
 
                     <div class="login-body">
-                        <form action="core/validateUsers.php" method="POST" id="loginFrm">
+                        <form action="core/validateUsers.php?page=login" method="POST" id="loginFrm">
                             <div class="frmControl">
-                                <input type="text" name="usrnme" placeholder="Username or Email" id="usr">
+                                <input type="text" name="usrnme" placeholder="Username or Email" id="usr" required onBlur="if(this.value=='') this.value = 'Username or Email'" onFocus="if(this.value == 'Username or Email') this.value =''">
                             </div>
 
                             <div class="frmControl">
-                                <input type="password" name="pswrd" placeholder="Password" id="pswrd">
+                                <input type="password" name="pswrd" placeholder="Password" id="pswrd" required>
                             </div>
 
                             <div class="frmControl">
