@@ -49,7 +49,11 @@
 
                             <div class="forgetPswrd">
                             <a href="#">
-                            <?php echo $_SESSION['errors']; ?>
+                            <?php 
+                                if(isset($_SESSION['errors']) && !empty($_SESSION['errors'])){
+                                echo $_SESSION['errors']; 
+                            }
+                            ?>
                             </a>
                             </div>
                         </form>
