@@ -16,13 +16,6 @@
  */
  require_once '../lib/ClassAutoLoader.php';
  
-/**
- * Set the post data from user that ie.
- * $userName
- * $password
- */
- $userName=$_POST['usrnme'];
- $password=$_POST['pswrd'];
 
 /**
  * Get the GET date from the user 
@@ -39,6 +32,14 @@
  */
  switch($request_page){
      case 'login':
+     /**
+      * Set the post data from user that ie.
+      * $userName
+      * $password
+      */
+ $userName=$_POST['usrnme'];
+ $password=$_POST['pswrd'];
+
      $login->userName=$userName;
      $login->password=$password;
      //Set the login time of user 
@@ -65,6 +66,7 @@
      break;
 
      case 'signup';
+     echo 'Thanks for signing up';
      break;
  }
  
