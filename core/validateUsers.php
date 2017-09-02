@@ -22,23 +22,25 @@
  */
  $request_page=$_GET['page'];
 
- /**
-  * Iniatilize the login class to validate user. 
-  */
- $login = new LoginValidationClass(); 
+ 
 
 /**
  * Base on the request page 
  */
  switch($request_page){
      case 'login':
-     /**
+
+    /**
+    * Iniatilize the login class to validate user. 
+    */
+     $login = new LoginValidationClass(); 
+    /**
       * Set the post data from user that ie.
       * $userName
       * $password
       */
- $userName=$_POST['usrnme'];
- $password=$_POST['pswrd'];
+     $userName=$_POST['usrnme'];
+     $password=$_POST['pswrd'];
 
      $login->userName=$userName;
      $login->password=$password;
@@ -65,8 +67,49 @@
      
      break;
 
-     case 'signup';
-     echo 'Thanks for signing up';
+     case 'signup':
+
+     //initialize sign up class
+     $signup = new SignUp();
+     //Get Post Data from sign up form
+
+     $fname=(isset($_POST['firstname'])?$_POST['firstname']:"");
+     $lname=(isset($_POST['lastname'])?$_POST['lastname']:"");
+     $password=(isset($_POST['password'])?$_POST['password']:"");
+     $email=(isset($_POST['email-address'])?$_POST['email-address']:"");
+     $agreement=(isset($_POST['agreement'])?$_POST['agreement']:"");
+
+     //Display POST DATA 
+     echo 'Fist Name: '.$fname;
+     echo '<br>Last Name: '.$lname;
+     echo '<br>Email: '.$email;
+     echo '<br>Password: '.$password;
+     echo '<br>Agreement: '.$agreement;
+
+     //upload data to server 
+     $signup->save(array(
+         "firstname"    =>$fname,
+         "lastname"     =>$lname,
+         "password"     =>$password,
+         "email"        =>$email,
+         "agreement"    =>$agreement
+     ));
+
+     //Login user and move user to index.php
+     $logInResult = $signup->login();
+     if($logInResult['error']){
+        print_r($login_result['msg']);
+        //set the error session var and redirect to login screen for display
+        $_SESSION['errors'] = $logInResult['msg'];
+        header('Location:../login.php');
+     }else{
+        //set the session vars for personal info and redirect to index.php
+        $_SESSION['firstname'] = $logInResult['msg']['firstname'];
+        $_SESSION['lastname']  = $logInResult['msg']['lastname'];
+        $_SESSION['avatar']    = $logInResult['msg']['avatar'];
+        $_SESSION['personID']  = $logInResult['msg']['pindex'];
+        header('Location:../index.php');
+     }
      break;
  }
  

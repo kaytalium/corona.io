@@ -37,7 +37,7 @@
         </div>
                     
         <div class="form-input">
-          <input type="password" name="password" placeholder="Pasword" class="md-input">
+          <input type="password" name="password" placeholder="Password" class="md-input">
         </div>
 
         <div class="form-input">
