@@ -80,14 +80,14 @@
      $agreement=(isset($_POST['agreement'])?$_POST['agreement']:"");
 
      //Display POST DATA 
-     echo 'Fist Name: '.$fname;
-     echo '<br>Last Name: '.$lname;
-     echo '<br>Email: '.$email;
-     echo '<br>Password: '.$password;
-     echo '<br>Agreement: '.$agreement;
+    //  echo 'Fist Name: '.$fname;
+    //  echo '<br>Last Name: '.$lname;
+    //  echo '<br>Email: '.$email;
+    //  echo '<br>Password: '.$password;
+    //  echo '<br>Agreement: '.$agreement;
 
      //upload data to server 
-     $signup->save(array(
+     $signupResult = $signup->save(array(
          "firstname"    =>$fname,
          "lastname"     =>$lname,
          "password"     =>$password,
@@ -95,21 +95,19 @@
          "agreement"    =>$agreement
      ));
 
-     //Login user and move user to index.php
-     $logInResult = $signup->login();
-     if($logInResult['error']){
-        print_r($login_result['msg']);
-        //set the error session var and redirect to login screen for display
-        $_SESSION['errors'] = $logInResult['msg'];
-        header('Location:../login.php');
-     }else{
-        //set the session vars for personal info and redirect to index.php
-        $_SESSION['firstname'] = $logInResult['msg']['firstname'];
-        $_SESSION['lastname']  = $logInResult['msg']['lastname'];
-        $_SESSION['avatar']    = $logInResult['msg']['avatar'];
-        $_SESSION['personID']  = $logInResult['msg']['pindex'];
-        header('Location:../index.php');
+     //if the email already exist in the database then return message to sign up screen
+     if($signupResult->error){
+        $_SESSION['errors'] = $signupResult['msg'];
+        header('Location:../signup.php');
      }
+
+     //if user is stored in the database then return to login to allow new user to sign in with 
+     //new account profile
+     if($signupResult->success){
+        $_SESSION['email'] = $email;
+        header('Location:../login.php');
+     }
+
      break;
  }
  
