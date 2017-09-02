@@ -7,3 +7,4 @@ this file will redirect unauthorize users to the login page
 include 'core/pageValidator.php';
 validateUseraccess('login.php');
 
+echo '<p>Welcome: '.$_SESSION['firstname'].'</p>';

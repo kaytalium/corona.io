@@ -32,7 +32,14 @@
                     <div class="login-body">
                         <form action="core/validateUsers.php?page=login" method="POST" id="loginFrm">
                             <div class="frmControl">
-                                <input type="text" name="usrnme" placeholder="Username or Email" id="usr" required onBlur="if(this.value=='') this.value = 'Username or Email'" onFocus="if(this.value == 'Username or Email') this.value =''">
+                                <input type="text" name="usrnme" placeholder="Username or Email" id="usr" 
+                                required onBlur="if(this.value=='') this.value = 'Username or Email'" 
+                                onFocus="if(this.value == 'Username or Email') this.value =''"
+                                value=<?php if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
+                                    echo $_SESSION['email'];
+                                }
+                                ?>
+                                >
                             </div>
 
                             <div class="frmControl">
