@@ -48,16 +48,17 @@
     
      $login_result = $login->loginUser();
      if($login_result['error']){
-        print_r($login_result['msg']);
+        #print_r($login_result['msg']);
         //set the error session var and redirect to login screen for display
         $_SESSION['errors'] = $login_result['msg'];
-        header('Location:../login.php');
+        //header('Location:../login.php');
      }else{
         //set the session vars for personal info and redirect to index.php
-        $_SESSION['firstname'] = $login_result['msg']['firstname'];
-        $_SESSION['lastname']  = $login_result['msg']['lastname'];
-        $_SESSION['avatar']    = $login_result['msg']['avatar'];
-        $_SESSION['personID']  = $login_result['msg']['pindex'];
+        $_SESSION['firstname']          = $login_result['msg']['firstname'];
+        $_SESSION['lastname']           = $login_result['msg']['lastname'];
+        $_SESSION['avatar']             = $login_result['msg']['avatar'];
+        $_SESSION['email']              = $login_result['msg']['email'];
+        $_SESSION['USERGRANTEDACCESS']  ="access";
         header('Location:../index.php');
      }
      
@@ -94,16 +95,17 @@
          "email"        =>$email,
          "agreement"    =>$agreement
      ));
+  
 
      //if the email already exist in the database then return message to sign up screen
-     if($signupResult->error){
+     if(isset($signupResult['error'])){
         $_SESSION['errors'] = $signupResult['msg'];
         header('Location:../signup.php');
      }
 
      //if user is stored in the database then return to login to allow new user to sign in with 
      //new account profile
-     if($signupResult->success){
+     if(isset($signupResult['success'])){
         $_SESSION['email'] = $email;
         header('Location:../login.php');
      }

@@ -18,7 +18,7 @@ class Password{
         }
 
         $salt = mcrypt_create_iv(12, MCRYPT_DEV_URANDOM);
-        $cryptpass = crypt($password, $salt); //Hashes the password they entered!
+        $cryptpass = crypt($this->userPassword, $salt); //Hashes the password they entered!
 
 
         //Return encoded password and salt 
